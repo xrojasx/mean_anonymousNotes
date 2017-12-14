@@ -52,30 +52,14 @@ const Note = mongoose.model('Note', noteSchema);
 
 
 // - - - - = = = = Controller = = = = - - - - 
-const noteController = {
-  index: (request, response) => {
-
-    Note.find({})
-      .then(notes => response.json(notes))
-      .catch(error => console.log(error));
-
-  },
-  create: (request, response) => {
-
-    Note.create(request.body)
-      .then(note => response.json(note))
-      .catch(error => console.log(error));
-
-  }
-};
-
-
-
-
+// moved to server/controllers/notes.js
 // - - - - = = = = Routes = = = = - - - - 
-app 
-.get('/notes', noteController.index)
-.post('/notes', noteController.create)
+// have been moved to server/config/routes.js 
+
+// store the function in a variable
+var routes_setter = require('./server/config/routes.js');
+// invoke the function stored in routes_setter and pass it the "app" variable
+routes_setter(app);
 
 
 // - - - - = = = = Server Listener = = = = - - - - 

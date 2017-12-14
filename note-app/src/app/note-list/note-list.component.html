@@ -3,7 +3,7 @@
   <div class="scroll">
   <ul>
     <li *ngFor="let note of notes.slice().reverse()">
-      <h5>{{ note.note }}</h5>
+      <h3>{{ note.note }}</h3>
       <p>Noted on: {{ note.createdAt | date: 'MMM d, yyyy, h:mm:ss a' }}</p>
     </li>
   </ul>
