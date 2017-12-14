@@ -1,0 +1,11 @@
+<fieldset>
+  <legend>Notes List</legend>
+  <div class="scroll">
+  <ul>
+    <li *ngFor="let note of notes.slice().reverse()">
+      <h5>{{ note.note }}</h5>
+      <p>Noted on: {{ note.createdAt | date: 'MMM d, yyyy, h:mm:ss a' }}</p>
+    </li>
+  </ul>
+  </div>
+</fieldset>
